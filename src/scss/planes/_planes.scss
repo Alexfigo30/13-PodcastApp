@@ -1,0 +1,131 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.planes {
+    background-color: v.$secundario;
+    padding: 3rem 0;
+
+    @include m.tablet { 
+        padding: 8rem 0;
+      }
+
+      &__heading{
+        color: v.$blanco;
+        display: inline-block;
+        font-size: 3.6rem;
+        margin-top: 5rem;
+
+        &:after {
+            background-color: #84d9bc;
+            content: "";
+            display: block;
+            height: 1rem;
+            margin: -1.4rem 0 0;
+            width: calc(100% + 1rem);
+        }
+      }
+
+      &__descripcion{
+        color: v.$blanco;
+
+      }
+}
+
+.nuestros{
+    display: flex;
+    flex-direction: column;
+
+    @include m.tablet { 
+         margin-block-start: 10rem;
+         flex-direction: row;
+         margin-block-start: 10rem;
+         margin-inline: auto;
+         max-width: 80rem;
+      } 
+
+    &__plan{
+         background-color: #fff;
+         border-bottom: 1px solid #e1e1e1;
+         flex-grow: 1;
+         padding: 16rem 4rem 4rem;
+
+         @include m.tablet { 
+            border: none;
+            transition-property: transform;
+            transition-duration: 300ms;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+         }
+
+         &--inicio{
+            background-image: url(../img/icono_inicio.svg);
+            background-position: 50% 2rem;
+            background-repeat: no-repeat;
+            background-size: 10rem;
+         }
+         &--negocio{
+            background-image: url(../img/icono_negocio.svg);
+            background-position: 50% 2rem;
+            background-repeat: no-repeat;
+            background-size: 10rem;
+            background-color: v.$primario;
+            order: -1;
+
+            @include m.tablet { 
+                 background-position: 50% 7rem;
+                 border-radius: 2rem;
+                 margin-bottom: -5rem;
+                 margin-top: -5rem;
+                 order: unset;
+                 padding-top: 21rem;
+                 z-index: 100;
+              }     
+         }
+         &--pro{
+            background-image: url(../img/icono_pro.svg);
+            background-position: 50% 2rem;
+            background-repeat: no-repeat;
+            background-size: 10rem;
+         }
+    }
+
+    &__precio{
+         font-size: 1.8rem;
+         font-weight: 700;
+         text-align: center;
+         text-transform: uppercase;
+    }
+
+    &__lis{
+         margin-bottom: 2rem;
+         text-align: center;
+    }
+
+    &__enlace{
+        background-color: v.$primario;
+        border: 2px solid v.$blanco;
+        color: v.$secundario;
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        padding: 1.2rem 4rem;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color .3s ease;
+        width: 100%;
+        margin-top: 2rem;
+        &:hover {
+            cursor: pointer;
+            background-color: #5dcda7;
+
+        }
+    
+        @include m.tablet {
+            width: auto;
+            display: inline-block;
+        }
+    }
+
+}

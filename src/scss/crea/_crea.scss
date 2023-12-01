@@ -1,0 +1,43 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.crea{
+    padding: 3rem 0;
+
+    @include m.tablet { 
+        padding: 8rem 0;
+      }
+
+      @include m.tablet { 
+        &__grid{
+             align-items: center;
+             display: grid;
+             gap: 2rem;
+             grid-template-columns: repeat(2,1fr);
+          }
+        }
+
+      &__heading{
+        color: v.$secundario;
+        display: inline-block;
+        font-size: 3.6rem;
+        margin-top: 5rem;
+
+        &:after {
+            content: "";
+            display: block;
+            height: 1rem;
+            margin: -1.4rem 0 0;
+            width: calc(100% + 1rem);
+            background-color: #84d9bc;
+        }
+      }
+
+      &__texto{
+        color: v.$negro;
+        font-size: 2rem;
+        line-height: 2;
+
+      }
+
+}

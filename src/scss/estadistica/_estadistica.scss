@@ -1,0 +1,27 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.estadistica{
+    padding: 3rem 0;
+
+    @include m.tablet { 
+        padding: 8rem 0;
+      }
+
+    &__heading{
+        color: v.$secundario;
+        display: inline-block;
+        font-size: 3.6rem;
+        margin-top: 5rem;
+
+        &:after {
+            background-color: v.$primario;
+            content: "";
+            display: block;
+            height: 1rem;
+            margin: -1.4rem 0 0;
+            width: calc(100% + 1rem);
+        }
+
+    }
+}
